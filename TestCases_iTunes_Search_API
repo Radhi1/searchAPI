@@ -1,0 +1,81 @@
+TEST PLAN FOR API SEARCH
+================================
+@author: radhika
+
+Problem: Write a test plan for iTunes Search API
+
+
+TEST CASES:
+
+	Validate response code for the followUSg scenarios mentioned below:
+	----------------------------------------------------------
+	// Test case to check positive scenario with default values	
+	Test case 1: For all default data
+	
+	URI : https://itunes.apple.com/search?term=jack+johnson&country=US&media=all&limit=50"
+	Test Data : term=jack johnson, country=US, media=all, limit=50
+	
+	// Test case to check positive scenario with all the valid value
+	Test case 2: all valid data
+	
+	URI : https://itunes.apple.com/search?term=jack+johnson&country=DO&media=software&limit=100"
+	Test Data : term=jack johnson, country=DO, media=software, limit=100
+	
+	// Test case to check no value scenario 
+	Test Case 3: mandatory field 'term' no value
+	
+	URI : https://itunes.apple.com/search?country=US&media=shortFilm&limit=150
+	Test Data : term="", country=US, media=shortFilm, limit=150
+	
+	// Test case to check missing value scenario
+	Test Case 4: optional 'country' missUSg
+		
+	URI : https://itunes.apple.com/search?term=jack+johnson&media=ebook&limit=200
+	Test Data : term="jack johnson", country="", media=ebook, limit=200
+	
+	// Test case to check negative scenario with invalid country value
+	Test Case 5: Invalid 'country' 
+		
+	URI : https://itunes.apple.com/search?term=jack+johnson&country=PPP&media=tvShow&limit=150
+	
+	// Test case to check count with all default value
+	Test case 6: all default data
+	
+	URI : https://itunes.apple.com/search?term=jack+johnson&country=US&media=all&limit=50"
+	Test Data : term=jack johnson, country=US, media=all, limit=50
+	
+	// Test case to check count with all valid value
+	Test case 7: all valid data
+	
+	URI : https://itunes.apple.com/search?term=jack+johnson&country=DO&media=software&limit=100"
+	Test Data : term=jack johnson, country=DO, media=software, limit=100
+	
+	//  Test case to check count with no term value
+	Test Case 8: mandatory field 'term' no value
+	
+	URI : https://itunes.apple.com/search?country=US&media=podcast&limit=150
+	Test Data : term="", country=US, media=podcast, limit=150
+	
+	// Test case to check count with country value missUSg
+	Test Case 9: optional 'country' missUSg
+		
+	URI : https://itunes.apple.com/search?term=jack+johnson&media=mUSic&limit=150
+	Test Data : term="jack johnson", country="", media=mUSic, limit=150
+	
+	// Test case to check error message with all valid value
+	Test case 10: all valid data 
+	
+	URI : https://itunes.apple.com/search?term=jack+johnson&country=DO&media=software&limit=100"
+	Test Data : term=jack johnson, country=DO, media=software, limit=100
+	
+	// Test case to check error message with Invalid country value
+	Test Case 11: USvalid country
+	
+	URI : https://itunes.apple.com/search?country=PPP&media=podcast&limit=150
+	Test Data : term="", country=PPP, media=podcast, limit=150
+	
+	// Test case to check error message with Invalid media value
+	Test Case 12: Invalid media
+		
+	URI : https://itunes.apple.com/search?term=jack+johnson&country=US&media=pencil&limit=150
+	Test Data : term="US", country="US", media=pencil, limit=150
